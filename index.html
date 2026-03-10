@@ -207,6 +207,45 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
         }
+
+        /* Skills & Workflows — Upgrade Sections */
+        .upgrade-section { padding: 6rem 0; }
+        .section-label {
+            font-size: 0.65rem; font-weight: 800; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 2.5rem;
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .section-label::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+            gap: 1rem;
+        }
+        .skill-chip {
+            background: rgba(168,85,247,0.05); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.25rem 1.5rem;
+            backdrop-filter: blur(8px); transition: var(--transition);
+        }
+        .skill-chip:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 0 20px rgba(168,85,247,0.1); }
+        .skill-name { font-size: 0.82rem; font-weight: 700; color: var(--text-main); }
+        .skill-desc { font-size: 0.68rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.4; }
+        .skill-chip.is-new { border-color: rgba(168,85,247,0.45); }
+        .skill-chip.is-new .skill-name::after { content: " ✦"; color: var(--accent); font-size: 0.6rem; }
+        .workflow-list { display: flex; flex-direction: column; gap: 0.6rem; }
+        .workflow-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 1.5rem; border-radius: 14px;
+            background: var(--surface); border: 1px solid var(--border);
+            backdrop-filter: blur(8px); transition: var(--transition);
+        }
+        .workflow-item:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(168,85,247,0.08); }
+        .workflow-name { font-size: 0.82rem; font-weight: 700; color: var(--text-main); }
+        .workflow-trigger {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+            color: var(--accent); background: rgba(168,85,247,0.12);
+            padding: 0.25rem 0.7rem; border-radius: 6px;
+        }
+        .workflow-item.is-new .workflow-name::after { content: " ✦"; color: var(--accent); }
     </style>
 </head>
 
@@ -291,8 +330,39 @@
             </div>
         </section>
 
+        <!-- Skills Library -->
+        <section class="upgrade-section">
+            <div class="section-label" data-reveal>Skills Library · 11 Active</div>
+            <div class="skills-grid" data-reveal>
+                <div class="skill-chip"><div class="skill-name">add-discord</div><div class="skill-desc">Professional Discord server integration</div></div>
+                <div class="skill-chip"><div class="skill-name">add-github-actions</div><div class="skill-desc">Robust CI/CD pipeline generation</div></div>
+                <div class="skill-chip"><div class="skill-name">add-linear</div><div class="skill-desc">Linear project management integration</div></div>
+                <div class="skill-chip"><div class="skill-name">add-telegram</div><div class="skill-desc">Telegram channel integration</div></div>
+                <div class="skill-chip"><div class="skill-name">add-gmail</div><div class="skill-desc">Gmail send/receive integration</div></div>
+                <div class="skill-chip"><div class="skill-name">add-slack</div><div class="skill-desc">Slack workspace integration</div></div>
+                <div class="skill-chip"><div class="skill-name">add-supabase</div><div class="skill-desc">Supabase persistence + real-time</div></div>
+                <div class="skill-chip"><div class="skill-name">add-obsidian</div><div class="skill-desc">Obsidian vault sync</div></div>
+                <div class="skill-chip is-new"><div class="skill-name">code-reviewer</div><div class="skill-desc">ESLint + tsc + security + AI review</div></div>
+                <div class="skill-chip is-new"><div class="skill-name">security-scanner</div><div class="skill-desc">npm audit + container isolation audit</div></div>
+                <div class="skill-chip is-new"><div class="skill-name">repo-modernizer</div><div class="skill-desc">ESM migration, strict TS, CI, README</div></div>
+            </div>
+        </section>
+
+        <!-- Workflows -->
+        <section class="upgrade-section">
+            <div class="section-label" data-reveal>Workflows · 6 Active</div>
+            <div class="workflow-list" data-reveal>
+                <div class="workflow-item"><span class="workflow-name">swarm-orchestration</span><span class="workflow-trigger">@Andy swarm</span></div>
+                <div class="workflow-item"><span class="workflow-name">daily-github-digest</span><span class="workflow-trigger">DAILY 7AM</span></div>
+                <div class="workflow-item"><span class="workflow-name">monday-briefing</span><span class="workflow-trigger">MON 9AM</span></div>
+                <div class="workflow-item"><span class="workflow-name">friday-review</span><span class="workflow-trigger">FRI 5PM</span></div>
+                <div class="workflow-item is-new"><span class="workflow-name">daily-standup</span><span class="workflow-trigger">DAILY 9AM</span></div>
+                <div class="workflow-item is-new"><span class="workflow-name">ci-security-gate</span><span class="workflow-trigger">EVERY PR</span></div>
+            </div>
+        </section>
+
         <footer>
-            <span>NANOCLAW COLLECTIVE • SPECIATION V2.4</span>
+            <span>NANOCLAW COLLECTIVE • SPECIATION V2.5 • 11 SKILLS • 6 WORKFLOWS</span>
         </footer>
     </div>
 
